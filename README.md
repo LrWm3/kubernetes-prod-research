@@ -146,7 +146,7 @@ My evaluation criteria
 - [x] Popular, production adoption
   - 4118 Stars, 797 Forks
 - [x] Still being supported
-  - 4 closed issues, 2 new issues between July 17, 2019 – July 24, 2019
+  - 12 closed issues, 8 new issues between June 24, 2019 – July 24, 2019
 - [ ] Low overhead, supports up to 1000 activations per second
   - [OpenWhisk Triggers per minute is 60](https://github.com/apache/incubator-openwhisk/blob/master/docs/reference.md#triggers-per-minute-fixed-60), so this doesn't have the performance required for a high-throughput FAAS platform
 - [x] Documentation, kubernetes documentation in particular
