@@ -50,6 +50,7 @@ FAAS is something in particular I've always been quite interested in. I found a 
 
 Here are the features I'm most interested in for now:
 
+- [ ] Opensource
 - [ ] Popular, production adoption
 - [ ] Still being supported
 - [ ] Documentation, kubernetes documentation in particular
@@ -99,6 +100,7 @@ From the [iron](https://iron.io/) team, comes [Iron Functions](https://github.co
 - Import functions from Amazon Lambda
 - Supports message queues 'Bolt' 'Redis' and 'IronMQ'
 
+- [x] Opensource
 - [x] Popular, production adoption
   - 2621 Stars, 205 Forks on GitHub
 - [ ] Still being supported
@@ -136,17 +138,140 @@ From the worlds' largest open-source software foundation, [apache](https://apach
 
 ### OpenWhisk Features
 
+My evaluation criteria
 
+- [x] Opensource
+- [ ] Popular, production adoption
+- [ ] Still being supported
+- [ ] Documentation, kubernetes documentation in particular
+- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+- [ ] Helm deployments would be a plus
+- [ ] Well-defined CICD pipeline
+- [ ] UI for managing functions
+- [ ] UI for visualizing functions networking (can be third-party repo)
+- [ ] Message-bus support ootb, kafka in particular
+- [ ] Works with encrypted-kafka message-bus
+- [ ] Fast spin-up time (if any)
+- [ ] Supports go, java, python and javascript
+- [ ] Integrates well with logging and monitoring tools
+- [ ] Roll-out support
+- [ ] Solid support for End-Users
+- [ ] Solid support for Developers
+- [ ] Solid support for Operators
 
 ### OpenWhisk Licence
 
 [Apache License v2.0](https://github.com/apache/incubator-openwhisk/blob/master/LICENSE.txt)
 
+### OpenWhisk Final Thoughts
+
+TODO
+
 ### Kubeless
 
+TODO
+
+### Kubeless License
+
+TODO
+
+### Kubeless Features
+
+TODO My evaluation criteria
+
+- [x] Opensource
+- [ ] Popular, production adoption
+- [ ] Still being supported
+- [ ] Documentation, kubernetes documentation in particular
+- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+- [ ] Helm deployments would be a plus
+- [ ] Well-defined CICD pipeline
+- [ ] UI for managing functions
+- [ ] UI for visualizing functions networking (can be third-party repo)
+- [ ] Message-bus support ootb, kafka in particular
+- [ ] Works with encrypted-kafka message-bus
+- [ ] Fast spin-up time (if any)
+- [ ] Supports go, java, python and javascript
+- [ ] Integrates well with logging and monitoring tools
+- [ ] Roll-out support
+- [ ] Solid support for End-Users
+- [ ] Solid support for Developers
+- [ ] Solid support for Operators
+
+### Kubeless Final Thoughts
+
+TODO
 
 ### Fission
 
+TODO
+
+### Fission License
+
+TODO
+
+### Fission Features
+
+TODO My evaluation criteria
+
+- [x] Opensource
+- [ ] Popular, production adoption
+- [ ] Still being supported
+- [ ] Documentation, kubernetes documentation in particular
+- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+- [ ] Helm deployments would be a plus
+- [ ] Well-defined CICD pipeline
+- [ ] UI for managing functions
+- [ ] UI for visualizing functions networking (can be third-party repo)
+- [ ] Message-bus support ootb, kafka in particular
+- [ ] Works with encrypted-kafka message-bus
+- [ ] Fast spin-up time (if any)
+- [ ] Supports go, java, python and javascript
+- [ ] Integrates well with logging and monitoring tools
+- [ ] Roll-out support
+- [ ] Solid support for End-Users
+- [ ] Solid support for Developers
+- [ ] Solid support for Operators
+
+### Fission Final Thoughts
+
+TODO
 
 ### FaaS-netes
 
+TODO
+
+### FaaS-netes License
+
+TODO
+
+### FaaS-netes Features
+
+My evaluation criteria
+
+- [x] Opensource
+- [ ] Popular, production adoption
+- [ ] Still being supported
+- [ ] Documentation, kubernetes documentation in particular
+- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+- [ ] Helm deployments would be a plus
+- [ ] Well-defined CICD pipeline
+- [ ] UI for managing functions
+- [ ] UI for visualizing functions networking (can be third-party repo)
+- [ ] Message-bus support ootb, kafka in particular
+- [ ] Works with encrypted-kafka message-bus
+- [ ] Fast spin-up time (if any)
+- [ ] Supports go, java, python and javascript
+- [ ] Integrates well with logging and monitoring tools
+- [ ] Roll-out support
+- [ ] Solid support for End-Users
+- [ ] Solid support for Developers
+- [ ] Solid support for Operators
+
+### FaaS-netes Final Thoughts
+
+TODO
+
+## FAAS Research Final Thoughts
+
+TODO 
