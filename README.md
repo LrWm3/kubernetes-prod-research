@@ -243,7 +243,7 @@ Very promising FAAS project. Meets all my basic requirements; would require addi
 
 ### Fission
 
-TODO
+Fission describes itself as 'Fast Serverless Functions for Kubernetes'
 
 ### Fission License
 
@@ -254,29 +254,49 @@ TODO
 TODO My evaluation criteria
 
 - [x] Opensource
-- [ ] Popular, production adoption
-- [ ] Still being supported
+- [x] Popular, production adoption
+  - 4497 Stars, 405 Forks
+- [x] Still being supported
+  - 21 closed issues, 11 new issues over June 24, 2019 – July 24, 2019
 - [ ] Low overhead, supports up to 1000 activations per second
-- [ ] Documentation, kubernetes documentation in particular
+  - Fast cold spin-up time, [100ms cold-start](https://github.com/fission/fission#performance-100msec-cold-start)
+  - Unknown warm spin-up time, couldn't find out from docs
+- [x] [Documentation](https://docs.fission.io/), [kubernetes documentation](https://docs.fission.io/installation/kubernetessetup/) in particular
 - [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+  - [Has its own CLI](https://docs.fission.io/installation/)
 - [ ] Helm deployments would be a plus
 - [ ] Well-defined CICD pipeline
 - [ ] UI for managing functions
 - [ ] UI for visualizing functions networking (can be third-party repo)
-- [ ] Message-bus support ootb, kafka in particular
+- [x] [Kafka Message-bus support](https://docs.fission.io/usage/kafka-trigger-tutorial/)
 - [ ] Works with encrypted-kafka message-bus
-- [ ] Fast spin-up time (if any)
-- [ ] Supports go, java, python and javascript
-- [ ] Integrates well with logging and monitoring tools
+- [x] Supports [java](https://docs.fission.io/languages/java/) and [go, node, python](https://docs.fission.io/tutorial/enabling-istio-on-fission/)
+- [x] [Integrates well with logging and monitoring tools](https://docs.fission.io/tutorial/enabling-istio-on-fission/)
+  - Istio integration support
 - [ ] Roll-out support
 - [ ] Solid support for End-Users
 - [ ] Solid support for Developers
 - [ ] Solid support for Operators
 - [ ] External Logging supported
 
+### Fission Extra Notes
+
+- Can use [configmaps and secrets](https://docs.fission.io/usage/access-secret-cfgmap-in-function/)
+- Working on [fission-workflows](https://github.com/fission/fission-workflows/blob/master/README.md), a product for setting up fission FAAS in DAG. Not sure if there's a UI for it or not yet, but its exactly what I was looking for in terms of organization of FAAS components.
+
+[Fission-workflows](https://github.com/fission/fission-workflows/blob/master/README.md) looks so sick
+
+- Supports `selectors` and `data-transformers` out of the box. `data-transformers` decouple code application input from upstream services. `selectors` allow for filtering on upstream data as well, without unnecessary networking operations.
+
+If a function was written as well which only takes data and inserts it into a database, (kafka-connect, basically), then it would be possible to see flows coming in from rest-apis, going between services and then going out to databases. The only thing which would be missing is if functions were performing REST calls on other functions...?
+
+I just realized, in a function only environment, a function calling another functions' REST api leaves the DAG, I think... But maybe there should be no request-response at all... 
+
+Does seem like databases need to be captured in this type of environment though, since function operations will want to work off of a database. Reinventing 'request-response' is definitely a mistake, however if the DAG can support request response, then things start to make a bit more sense I think.
+
 ### Fission Final Thoughts
 
-TODO
+Coolest so far, love the `fission-workflows` idea. If it makes room for Request Response & database operations, it would be a full platform for `faas`. Database writes can be done through kafka, but RR probably shouldn't be.
 
 ### FaaS-netes
 
