@@ -53,6 +53,7 @@ Here are the features I'm most interested in for now:
 - [ ] Opensource
 - [ ] Popular, production adoption
 - [ ] Still being supported
+- [ ] Low overhead, supports up to 1000 activations per second
 - [ ] Documentation, kubernetes documentation in particular
 - [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
 - [ ] Helm deployments would be a plus
@@ -68,6 +69,7 @@ Here are the features I'm most interested in for now:
 - [ ] Solid support for End-Users
 - [ ] Solid support for Developers
 - [ ] Solid support for Operators
+- [ ] External Logging supported
 
 I'll go through the list for each FAAS I evaluate from here on out.
 
@@ -141,23 +143,32 @@ From the worlds' largest open-source software foundation, [apache](https://apach
 My evaluation criteria
 
 - [x] Opensource
-- [ ] Popular, production adoption
-- [ ] Still being supported
-- [ ] Documentation, kubernetes documentation in particular
-- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
-- [ ] Helm deployments would be a plus
-- [ ] Well-defined CICD pipeline
-- [ ] UI for managing functions
-- [ ] UI for visualizing functions networking (can be third-party repo)
-- [ ] Message-bus support ootb, kafka in particular
-- [ ] Works with encrypted-kafka message-bus
-- [ ] Fast spin-up time (if any)
-- [ ] Supports go, java, python and javascript
-- [ ] Integrates well with logging and monitoring tools
-- [ ] Roll-out support
-- [ ] Solid support for End-Users
-- [ ] Solid support for Developers
-- [ ] Solid support for Operators
+- [x] Popular, production adoption
+  - 4118 Stars, 797 Forks
+- [x] Still being supported
+  - 4 closed issues, 2 new issues between July 17, 2019 – July 24, 2019
+- [ ] Low overhead, supports up to 1000 activations per second
+  - [OpenWhisk Triggers per minute is 60](https://github.com/apache/incubator-openwhisk/blob/master/docs/reference.md#triggers-per-minute-fixed-60), so this doesn't have the performance required for a high-throughput FAAS platform
+- [x] Documentation, kubernetes documentation in particular
+  - [Kubernetes Documentation](https://github.com/apache/incubator-openwhisk-deploy-kube/blob/master/README.md)
+- [ ] ~~Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could~~
+- [ ] ~~Helm deployments would be a plus~~
+- [ ] ~~Well-defined CICD pipeline~~
+- [ ] ~~UI for managing functions~~
+- [ ] ~~UI for visualizing functions networking (can be third-party repo)~~
+- [x] Message-bus support ootb, kafka in particular
+  - [Kafka is built into openwhisk directly](https://github.com/apache/incubator-openwhisk/blob/master/docs/about.md#please-form-a-line-kafka)
+- [ ] ~~Works with encrypted-kafka message-bus~~
+- [ ] ~~Fast spin-up time (if any)~~
+- [ ] ~~Supports go, java, python and javascript~~
+- [ ] ~~Integrates well with logging and monitoring tools~~
+- [ ] ~~Roll-out support~~
+- [ ] ~~Solid support for End-Users~~
+- [ ] ~~Solid support for Developers~~
+- [ ] ~~Solid support for Operators~~
+- [ ] ~~External Logging supported~~
+
+I stopped filling out this section when I saw the performance limitations. I don't love the idea of standing up an entire docker container each time an activation is run.
 
 ### OpenWhisk Licence
 
@@ -165,11 +176,11 @@ My evaluation criteria
 
 ### OpenWhisk Final Thoughts
 
-TODO
+Well supported, but its performance limits its usefulness in a FAAS centric development environment
 
 ### Kubeless
 
-TODO
+
 
 ### Kubeless License
 
@@ -182,6 +193,7 @@ TODO My evaluation criteria
 - [x] Opensource
 - [ ] Popular, production adoption
 - [ ] Still being supported
+- [ ] Low overhead, supports up to 1000 activations per second
 - [ ] Documentation, kubernetes documentation in particular
 - [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
 - [ ] Helm deployments would be a plus
@@ -197,6 +209,7 @@ TODO My evaluation criteria
 - [ ] Solid support for End-Users
 - [ ] Solid support for Developers
 - [ ] Solid support for Operators
+- [ ] External Logging supported
 
 ### Kubeless Final Thoughts
 
@@ -217,6 +230,7 @@ TODO My evaluation criteria
 - [x] Opensource
 - [ ] Popular, production adoption
 - [ ] Still being supported
+- [ ] Low overhead, supports up to 1000 activations per second
 - [ ] Documentation, kubernetes documentation in particular
 - [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
 - [ ] Helm deployments would be a plus
@@ -232,6 +246,7 @@ TODO My evaluation criteria
 - [ ] Solid support for End-Users
 - [ ] Solid support for Developers
 - [ ] Solid support for Operators
+- [ ] External Logging supported
 
 ### Fission Final Thoughts
 
@@ -267,6 +282,7 @@ My evaluation criteria
 - [ ] Solid support for End-Users
 - [ ] Solid support for Developers
 - [ ] Solid support for Operators
+- [ ] External Logging supported
 
 ### FaaS-netes Final Thoughts
 
