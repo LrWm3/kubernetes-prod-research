@@ -134,7 +134,13 @@ Ongoing development and support is never optional.
 
 From the worlds' largest open-source software foundation, [apache](https://apache.org/) has built a FAAS platform OpenWhisk. Apache 2.0 License,
 
-##
+### OpenWhisk Features
+
+
+
+### OpenWhisk Licence
+
+[Apache License v2.0](https://github.com/apache/incubator-openwhisk/blob/master/LICENSE.txt)
 
 ### Kubeless
 
