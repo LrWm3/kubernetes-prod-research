@@ -136,7 +136,7 @@ Ongoing development and support is never optional.
 
 ### OpenWhisk
 
-From the worlds' largest open-source software foundation, [apache](https://apache.org/) has built a FAAS platform OpenWhisk. Apache 2.0 License,
+From the worlds' largest open-source software foundation, [apache](https://apache.org/) has built a [FAAS platform OpenWhisk](https://github.com/apache/incubator-openwhisk). Apache 2.0 License,
 
 ### OpenWhisk Features
 
@@ -188,11 +188,13 @@ Well supported, but its performance limits its usefulness in a FAAS centric deve
 
 ### Kubeless Features
 
-TODO My evaluation criteria
+My evaluation criteria
 
 - [x] Opensource
-- [ ] Popular, production adoption
+- [x] Popular, production adoption
+  - 4890 stars, 500 forks
 - [ ] Still being supported
+  - 6 closed issues, 10 new issues from June 24, 2019 – July 24, 2019
 - [ ] Low overhead, supports up to 1000 activations per second
 - [ ] Documentation, kubernetes documentation in particular
 - [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
