@@ -302,13 +302,13 @@ Check out the [Roadmap for fisson-workflows](https://github.com/fission/fission-
 
 Coolest so far, love the `fission-workflows` idea. If it makes room for Request Response & database operations, it would be a full platform for `faas`. Database writes can be done through kafka, but RR probably shouldn't be.
 
-### FaaS-netes
+### FaaS-netes / OpenFAAS
 
-[FaaS-netes](https://github.com/openfaas/faas-netes)
+[FaaS-netes](https://github.com/openfaas/faas-netes), is OpenFAAS on kubernetes.
 
 ### FaaS-netes License
 
-TODO
+[MIT License](https://github.com/openfaas/faas-netes/blob/master/LICENSE)
 
 ### FaaS-netes Features
 
