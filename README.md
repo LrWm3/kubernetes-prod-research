@@ -42,6 +42,12 @@ Indented items are some ideas which would be cool to have.
 - Can leverage GPU / support GPU-passthrough / provisioning
 - Self-hosted heroku? deviates from the design I had planned, but might be nice for people who want more control over their platform
 
+## General Notes
+
+For notes I have as I am doing other research
+
+- [The Serverless Framework](https://github.com/serverless/serverless) isn't kubernetes driven, but it is interesting. If there was a way to take this and apply it to an on-prem platform, it would be very interesting.
+
 ## FAAS
 
 FAAS is something in particular I've always been quite interested in. I found a list of FAAS [in this article](https://blog.alexellis.io/introducing-functions-as-a-service/), at the end of section 2.
@@ -136,7 +142,7 @@ Ongoing development and support is never optional.
 
 ### OpenWhisk
 
-From the worlds' largest open-source software foundation, [apache](https://apache.org/) has built a FAAS platform OpenWhisk. Apache 2.0 License,
+From the worlds' largest open-source software foundation, [apache](https://apache.org/) has built a [FAAS platform OpenWhisk](https://github.com/apache/incubator-openwhisk). Apache 2.0 License,
 
 ### OpenWhisk Features
 
@@ -146,7 +152,7 @@ My evaluation criteria
 - [x] Popular, production adoption
   - 4118 Stars, 797 Forks
 - [x] Still being supported
-  - 4 closed issues, 2 new issues between July 17, 2019 – July 24, 2019
+  - 12 closed issues, 8 new issues between June 24, 2019 – July 24, 2019
 - [ ] Low overhead, supports up to 1000 activations per second
   - [OpenWhisk Triggers per minute is 60](https://github.com/apache/incubator-openwhisk/blob/master/docs/reference.md#triggers-per-minute-fixed-60), so this doesn't have the performance required for a high-throughput FAAS platform
 - [x] Documentation, kubernetes documentation in particular
@@ -180,40 +186,60 @@ Well supported, but its performance limits its usefulness in a FAAS centric deve
 
 ### Kubeless
 
-
+[Kubeless](https://github.com/kubeless/kubeless) is a kubernetes native FAAS framework. It's not supported by any famous teams though.
 
 ### Kubeless License
 
-TODO
+[Apache License v2.0](https://github.com/kubeless/kubeless/blob/master/LICENSE)
 
 ### Kubeless Features
 
-TODO My evaluation criteria
+My evaluation criteria
 
 - [x] Opensource
-- [ ] Popular, production adoption
-- [ ] Still being supported
-- [ ] Low overhead, supports up to 1000 activations per second
-- [ ] Documentation, kubernetes documentation in particular
-- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+- [x] Popular, production adoption
+  - 4890 stars, 500 forks
+- [x] Still being supported, not affiliated with any organization
+  - 6 closed issues, 10 new issues from June 24, 2019 – July 24, 2019
+- [x] Low overhead, supports up to 1000 activations per second
+  - [0.24ms / exec over 10 exec with golang](https://medium.com/bitnami-perspectives/introducing-golang-functions-to-kubeless-a9a9e4f0cab1#7828) for a simple 'isPrime' method, 9.0ms / exec with python. Even at 10x slower, with scaling, this can be resolved. This in the right ballpark for number of executions. [Kubeless leverages kubernetes-auto-scaling](https://github.com/kubeless/kubeless#), so `inf` scaling is possible without a gut-busting amount of resources.
+  - 
+- [x] [Documentation](https://kubeless.io/docs/), kubernetes documentation in particular
+  - Yes, also with the [serverless framework](https://github.com/serverless/serverless-kubeless) if iaas providers are an option
+- [x] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+  - [Uses CRD to deploy functions](https://github.com/kubeless/kubeless#), making it about as coupled to kubernetes as possible
+  - Does have a [CLI](https://github.com/kubeless/kubeless/releases) though
 - [ ] Helm deployments would be a plus
-- [ ] Well-defined CICD pipeline
-- [ ] UI for managing functions
+  - Not helm, but one of three [kubernetes](https://kubeless.io/docs/quick-start/) yamls for RBAC & non-RBAC clusters... close enough
+- [x] Well-defined CICD pipeline
+- [x] [UI for managing functions](https://github.com/kubeless/kubeless-ui)
+  - very basic UI, but does allow for editing of at least python functions
 - [ ] UI for visualizing functions networking (can be third-party repo)
-- [ ] Message-bus support ootb, kafka in particular
+  - Would require additional research
+- [x] [Kafka Message-bus support](https://kubeless.io/docs/pubsub-functions/)
 - [ ] Works with encrypted-kafka message-bus
-- [ ] Fast spin-up time (if any)
-- [ ] Supports go, java, python and javascript
-- [ ] Integrates well with logging and monitoring tools
+- [x] [Fast spin-up time](https://medium.com/bitnami-perspectives/introducing-golang-functions-to-kubeless-a9a9e4f0cab1#7828) (if any)
+- [x] [Supports go, java, python and javascript](https://kubeless.io/docs/runtimes/)
+- [x] Integrates well with logging and monitoring tools
+  - Not sure about logging, I can see logs are in the pods for functions, but I'm not sure about collecting them
+  - [Grafana integration well documented](https://kubeless.io/docs/monitoring/)
 - [ ] Roll-out support
-- [ ] Solid support for End-Users
-- [ ] Solid support for Developers
+  - I'm not sure, may require reading docs more closely
+- [x] Solid support for End-Users
+- [x] Solid support for Developers
+  - Has debugging in cluster, uses kubernetes already, devs are writing only functions
+  - Functions can use [configmaps](https://kubeless.io/docs/function-controller-configuration/)
 - [ ] Solid support for Operators
-- [ ] External Logging supported
+  - Not really, its a kubernetes thing
+- [x] Solid support for EngIT
+  - I'd need to look more closely, but my gut says... YES
+  - [Supports multi-tenancy](https://kubeless.io/docs/function-controller-configuration/)
+
+Other notes: Does not currently support distributed tracing, although [there are plans for this in the roadmap](https://github.com/kubeless/kubeless#roadmap)
 
 ### Kubeless Final Thoughts
 
-TODO
+Very promising FAAS project. Meets all my basic requirements; would require additional research to integrate logging, but otherwise looks solid.
 
 ### Fission
 
