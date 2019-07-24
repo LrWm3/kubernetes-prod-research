@@ -280,7 +280,7 @@ TODO
 
 ### FaaS-netes
 
-TODO
+[FaaS-netes](https://github.com/openfaas/faas-netes)
 
 ### FaaS-netes License
 
