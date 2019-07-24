@@ -296,6 +296,8 @@ I just realized, in a function only environment, a function calling another func
 
 Does seem like databases need to be captured in this type of environment though, since function operations will want to work off of a database. Reinventing 'request-response' is definitely a mistake, however if the DAG can support request response, then things start to make a bit more sense I think.
 
+Check out the [Roadmap for fisson-workflows](https://github.com/fission/fission-workflows/blob/master/Docs/roadmap.md) to really get excited. Unfortunately, the excitement is soon tapered by the [github pulse](https://github.com/fission/fission-workflows/pulse) for the project
+
 ### Fission Final Thoughts
 
 Coolest so far, love the `fission-workflows` idea. If it makes room for Request Response & database operations, it would be a full platform for `faas`. Database writes can be done through kafka, but RR probably shouldn't be.
