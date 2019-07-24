@@ -261,9 +261,11 @@ TODO My evaluation criteria
 - [ ] Low overhead, supports up to 1000 activations per second
   - Fast cold spin-up time, [100ms cold-start](https://github.com/fission/fission#performance-100msec-cold-start)
   - Unknown warm spin-up time, couldn't find out from docs
+  - Maybe? its whole thing is being fast so I'd hope so.
 - [x] [Documentation](https://docs.fission.io/), [kubernetes documentation](https://docs.fission.io/installation/kubernetessetup/) in particular
-- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+- [x] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
   - [Has its own CLI](https://docs.fission.io/installation/)
+  - Is definitely tightly coupled with kubernetes
 - [ ] Helm deployments would be a plus
 - [ ] Well-defined CICD pipeline
 - [ ] UI for managing functions
@@ -273,11 +275,11 @@ TODO My evaluation criteria
 - [x] Supports [java](https://docs.fission.io/languages/java/) and [go, node, python](https://docs.fission.io/tutorial/enabling-istio-on-fission/)
 - [x] [Integrates well with logging and monitoring tools](https://docs.fission.io/tutorial/enabling-istio-on-fission/)
   - Istio integration support
-- [ ] Roll-out support
-- [ ] Solid support for End-Users
-- [ ] Solid support for Developers
-- [ ] Solid support for Operators
-- [ ] External Logging supported
+- [x] Roll-out support
+- [x] Solid support for End-Users
+- [x] Solid support for Developers
+- [x] Solid support for Operators
+- [x] External Logging supported
 
 ### Fission Extra Notes
 
