@@ -42,6 +42,12 @@ Indented items are some ideas which would be cool to have.
 - Can leverage GPU / support GPU-passthrough / provisioning
 - Self-hosted heroku? deviates from the design I had planned, but might be nice for people who want more control over their platform
 
+## General Notes
+
+For notes I have as I am doing other research
+
+- [The Serverless Framework](https://github.com/serverless/serverless) isn't kubernetes driven, but it is interesting. If there was a way to take this and apply it to an on-prem platform, it would be very interesting.
+
 ## FAAS
 
 FAAS is something in particular I've always been quite interested in. I found a list of FAAS [in this article](https://blog.alexellis.io/introducing-functions-as-a-service/), at the end of section 2.
@@ -193,11 +199,12 @@ My evaluation criteria
 - [x] Opensource
 - [x] Popular, production adoption
   - 4890 stars, 500 forks
-- [ ] Still being supported
+- [x] Still being supported, not affiliated with any organization
   - 6 closed issues, 10 new issues from June 24, 2019 – July 24, 2019
 - [ ] Low overhead, supports up to 1000 activations per second
 - [ ] Documentation, kubernetes documentation in particular
 - [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
+  - Uses CRD to deploy functions, making it about as coupled to kubernetes as possible
 - [ ] Helm deployments would be a plus
 - [ ] Well-defined CICD pipeline
 - [ ] UI for managing functions
