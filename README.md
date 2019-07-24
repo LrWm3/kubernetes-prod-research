@@ -180,11 +180,11 @@ Well supported, but its performance limits its usefulness in a FAAS centric deve
 
 ### Kubeless
 
-
+[Kubeless](https://github.com/kubeless/kubeless) is a kubernetes native FAAS framework. It's not supported by any famous teams though.
 
 ### Kubeless License
 
-TODO
+[Apache License v2.0](https://github.com/kubeless/kubeless/blob/master/LICENSE)
 
 ### Kubeless Features
 
