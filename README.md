@@ -315,8 +315,11 @@ Coolest so far, love the `fission-workflows` idea. If it makes room for Request 
 My evaluation criteria
 
 - [x] Opensource
-- [ ] Popular, production adoption
-- [ ] Still being supported
+- [x] Popular, production adoption
+  - OpenFAAS has 14,975 stars, FaaS-netes has 1,361
+- [x] Still being supported
+  - 13 closed, 6 new on faas between June 24, 2019 – July 24, 2019
+  - 9 closed, 6 new on faas-netes between June 24, 2019 – July 24, 2019
 - [ ] Documentation, kubernetes documentation in particular
 - [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
 - [ ] Helm deployments would be a plus
