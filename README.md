@@ -47,6 +47,8 @@ Indented items are some ideas which would be cool to have.
 For notes I have as I am doing other research
 
 - [The Serverless Framework](https://github.com/serverless/serverless) isn't kubernetes driven, but it is interesting. If there was a way to take this and apply it to an on-prem platform, it would be very interesting.
+- [Kubernetes performance testing](https://docs.openfaas.com/architecture/performance/) is laid out clearly by the OpenFaaS team.
+- [WeaveWorks](https://www.weave.works/product/cloud/) appears to be what I want in terms of visualization
 
 ## FAAS
 
@@ -302,9 +304,9 @@ Check out the [Roadmap for fisson-workflows](https://github.com/fission/fission-
 
 Coolest so far, love the `fission-workflows` idea. If it makes room for Request Response & database operations, it would be a full platform for `faas`. Database writes can be done through kafka, but RR probably shouldn't be.
 
-### FaaS-netes / OpenFAAS
+### FaaS-netes / OpenFaaS
 
-[FaaS-netes](https://github.com/openfaas/faas-netes), is OpenFAAS on kubernetes.
+[FaaS-netes](https://github.com/openfaas/faas-netes), is OpenFaaS on kubernetes.
 
 ### FaaS-netes License
 
@@ -320,27 +322,30 @@ My evaluation criteria
 - [x] Still being supported
   - 13 closed, 6 new on faas between June 24, 2019 – July 24, 2019
   - 9 closed, 6 new on faas-netes between June 24, 2019 – July 24, 2019
-- [ ] Documentation, kubernetes documentation in particular
-- [ ] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could
-- [ ] Helm deployments would be a plus
-- [ ] Well-defined CICD pipeline
-- [ ] UI for managing functions
+- [x] [Documentation](https://docs.openfaas.com/), kubernetes documentation in particular ([video](https://youtu.be/0DbrLsUvaso))
+- [x] Tightly coupled with kubernetes, would like to leverage kubernetes CRDs and avoid yet another CLI tool if I could, ([has k8 CRD operator](https://github.com/openfaas-incubator/openfaas-operator/))
+- [x] [Helm deployments](https://github.com/openfaas/faas-netes#faas-netes) would be a plus
+- [x] [Well-defined CICD pipeline](https://docs.openfaas.com/openfaas-cloud/self-hosted/gitlab/)
+- [x] [UI for managing functions](https://github.com/openfaas/faas#begin-the-testdrive)
 - [ ] UI for visualizing functions networking (can be third-party repo)
-- [ ] Message-bus support ootb, kafka in particular
+- [x] [Kafka Message-bus support](https://github.com/openfaas-incubator/kafka-connector)
 - [ ] Works with encrypted-kafka message-bus
 - [ ] Fast spin-up time (if any)
-- [ ] Supports go, java, python and javascript
-- [ ] Integrates well with logging and monitoring tools
+- [x] [Supports go, java, python and javascript](https://github.com/openfaas/faas-netes#faas-netes) (supports everything)
+- [x] Integrates well with logging and monitoring tools
 - [ ] Roll-out support
 - [ ] Solid support for End-Users
 - [ ] Solid support for Developers
 - [ ] Solid support for Operators
+- [x] [Solid support for EngIT](https://docs.openfaas.com/)
+  - [Self-hosted gitlab integration](https://docs.openfaas.com/openfaas-cloud/self-hosted/gitlab/)
+  - [Production](https://docs.openfaas.com/architecture/production/), [Performance](https://docs.openfaas.com/architecture/performance/), [Metrics](https://docs.openfaas.com/architecture/metrics/), [Autoscaling](https://docs.openfaas.com/architecture/autoscaling/), and [Gateways](https://docs.openfaas.com/architecture/gateway/) clearly documented
 - [ ] External Logging supported
 
 ### FaaS-netes Final Thoughts
 
+Clearly the best supported of all projects I've reviewed so far.
+
+### FaaS-netes Final Thoughts
+
 TODO
-
-## FAAS Research Final Thoughts
-
-TODO 
