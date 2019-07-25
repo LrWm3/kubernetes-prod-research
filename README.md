@@ -1,62 +1,69 @@
 # kubernetes-prod-research
 
-Research into a complete production-ready kubernetes development environment.
+Research into provisioning a "complete" on-prem multi-tenant secure production-ready kubernetes environment. The end result I am looking for is laid out below.
 
 ## Goals 
 
-Here's everything I can think of in terms of what I'd like my production-ready kubernetes development environment would have.
+Here's everything I would like to have in my kubernetes cluster.
 
-Indented items are some ideas which would be cool to have.
+> Indented items are generally meant to be ideas on how to accomplish the previous item in the list
 
 - RBAC
 - Multi-tenancy
   - Virtual Clusters
 - FAAS
-  - openfaas (- its a service / + its better supported)
-- CICD; deploy, build, test
-- Easy to deploy
+  - faas / faas-netes (- its a service / + its better supported)
+- CICD; deploy, build, test both locally and from a git repo
+- Easy to initially set up the kubernetes cluster; ideally point and shoot with option for zero-config
 - kubernetes managed ssl-certs for subdomains
 - in-cluster ssl
 - high-throughput, stateful message-bus
   - kafka
   - kstreams
   - ksql
-- cluster-specific volume support
+  - geo-spatial operations kafka-topics
+- on-prem cluster-specific volume support, in a multi-tenancy way
   - nfs
 - database adapters
   - postgresql configured with database, table & row level permissions
   - deployable permissioned graphql adapters for postgresql
+  - graph database addon
+  - mongodb document database
 - cluster-specific helm registry
-- Authentication / Authorization tied to LDAP / Active Directory
+- cluster-specific auto-cache
+  - redis
+- Authentication / Authorization for cluster / database access tied to LDAP / Active Directory
 - security features like whitelists / blacklists / DDOS defense
-- all stateful, persisted data can be easily configured to push to PV somewhere?
-  - This would require more thought, as kubernetes basically already supports this...
+- all stateful, persisted data can be easily configured to push to external storage on a per-tenant basis
+  - Kubernetes basically already supports this with PV, so it would be a matter of creating a way for people to add PV to their clusters
 - developer / admin tools
   - kubeapps
   - cluster visualization tools?
-  - kubeadmin?
+  - kubeadmin
 - monitoring and logging tools
   - graphana
   - fluentd
+- service mesh
+  - istio
 - kafka-connect support, (with persist?)
 - Can leverage GPU / support GPU-passthrough / provisioning
-- Self-hosted heroku? deviates from the design I had planned, but might be nice for people who want more control over their platform
+- Self-hosted heroku aka / dokku? deviates from the design I had planned, but might be nice for people who want more control over their platform
 
 ## General Notes
 
 For notes I have as I am doing other research
 
-- [The Serverless Framework](https://github.com/serverless/serverless) isn't kubernetes driven, but it is interesting. If there was a way to take this and apply it to an on-prem platform, it would be very interesting.
+- [The Serverless Framework](https://github.com/serverless/serverless) isn't strictly kubernetes driven, but it is defintely interesting. If there was a way to take this and apply it to an on-prem platform, it would meet many of the criteria I've listed above.
 
 ## FAAS
 
-FAAS is something in particular I've always been quite interested in. I found a list of FAAS [in this article](https://blog.alexellis.io/introducing-functions-as-a-service/), at the end of section 2.
+FAAS is something in particular I've always been quite interested in. I found a list of FAAS [in this article](https://blog.alexellis.io/introducing-functions-as-a-service/), at the end of section 2. Another good article for kubernetes resources in general can be in the article [50+ Useful Kubernetes Tools](https://caylent.com/50-useful-kubernetes-tools/).
 
 ### FAAS Features I'm looking for
 
 Here are the features I'm most interested in for now:
 
-- [ ] Opensource
+- [ ] Opensource, with MIT or Apache v2.0 licenses
 - [ ] Popular, production adoption
 - [ ] Still being supported
 - [ ] Low overhead, supports up to 1000 activations per second
@@ -108,7 +115,7 @@ From the [iron](https://iron.io/) team, comes [Iron Functions](https://github.co
 - Import functions from Amazon Lambda
 - Supports message queues 'Bolt' 'Redis' and 'IronMQ'
 
-- [x] Opensource
+- [x] Opensource, with MIT or Apache v2.0 licenses
 - [x] Popular, production adoption
   - 2621 Stars, 205 Forks on GitHub
 - [ ] Still being supported
@@ -148,7 +155,7 @@ From the worlds' largest open-source software foundation, [apache](https://apach
 
 My evaluation criteria
 
-- [x] Opensource
+- [x] Opensource, with MIT or Apache v2.0 licenses
 - [x] Popular, production adoption
   - 4118 Stars, 797 Forks
 - [x] Still being supported
@@ -196,7 +203,7 @@ Well supported, but its performance limits its usefulness in a FAAS centric deve
 
 My evaluation criteria
 
-- [x] Opensource
+- [x] Opensource, with MIT or Apache v2.0 licenses
 - [x] Popular, production adoption
   - 4890 stars, 500 forks
 - [x] Still being supported, not affiliated with any organization
@@ -247,13 +254,13 @@ Fission describes itself as 'Fast Serverless Functions for Kubernetes'
 
 ### Fission License
 
-TODO
+[Apache License v2.0](https://github.com/fission/fission/blob/master/LICENSE)
 
 ### Fission Features
 
-TODO My evaluation criteria
+My evaluation criteria
 
-- [x] Opensource
+- [x] Opensource, with MIT or Apache v2.0 licenses
 - [x] Popular, production adoption
   - 4497 Stars, 405 Forks
 - [x] Still being supported
