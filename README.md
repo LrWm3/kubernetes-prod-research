@@ -53,9 +53,12 @@ Here's everything I would like to have in my kubernetes cluster.
 
 For notes I have as I am doing other research
 
-- [The Serverless Framework](https://github.com/serverless/serverless) isn't kubernetes driven, but it is interesting. If there was a way to take this and apply it to an on-prem platform, it would be very interesting.
-- [Kubernetes performance testing](https://docs.openfaas.com/architecture/performance/) is laid out clearly by the OpenFaaS team.
-- [WeaveWorks](https://www.weave.works/product/cloud/) appears to be what I want in terms of visualization
+| Software | Description |
+|--|--|
+| [The Serverless Framework](https://github.com/serverless/serverless) | It isn't kubernetes driven, but it is interesting. If there was a way to take this and apply it to an on-prem platform, it would be very interesting. |
+| [Kubernetes performance testing](https://docs.openfaas.com/architecture/performance/) | It is laid out clearly by the OpenFaaS team. |
+| [WeaveWorks](https://www.weave.works/product/cloud/) | Appears to be what I want in terms of visualization, although istio supports functionality like this as well |
+| [stream-reactor](https://github.com/landoop/stream-reactor) | Kafka streaming platform, with support for common connectors already done |
 
 ## FAAS
 
